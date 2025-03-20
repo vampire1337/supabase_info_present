@@ -21,6 +21,10 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/supabase_info_present' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/supabase_info_present' : '',
+  trailingSlash: true,
 }
 
 mergeConfig(nextConfig, userConfig)
